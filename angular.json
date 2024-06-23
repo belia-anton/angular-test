@@ -19,7 +19,6 @@
           "options": {
             "outputPath": "dist/angular-test",
             "index": "src/index.html",
-            "baseHref": "/angular-test/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -31,8 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/flex-layout-system/dist/css-responsive.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/flex-layout-system/dist/css-responsive.min.css"
             ],
             "scripts": []
           },
