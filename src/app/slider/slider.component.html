@@ -1,0 +1,13 @@
+<section class="splide" id="image-carousel">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide" *ngFor="let slide of slides">
+        <img [src]="slide.image" [alt]="slide.alt">
+        <div class="slide-content">
+          <h2>{{ slide.title }}</h2>
+          <p>{{ slide.description }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

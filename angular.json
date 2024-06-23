@@ -31,8 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/flex-layout-system/dist/css-responsive.min.css"
+              "node_modules/flex-layout-system/dist/css-responsive.min.css",
+              "node_modules/@splidejs/splide/dist/css/splide.min.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
