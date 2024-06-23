@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CounterCardComponent } from './counter-card/counter-card.component';
 import 'flex-layout-system';
+import { CounterCardComponent } from './counter-card/counter-card.component';
 import { CardComponent } from './card/card.component';
 
 @Component({
