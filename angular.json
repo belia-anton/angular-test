@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/flex-layout-system/dist/css-responsive.min.css",
               "src/styles.scss"
             ],
             "scripts": []

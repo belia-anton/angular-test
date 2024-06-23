@@ -1,4 +1,1008 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+@layer reset {
+  .btn-min-size button {
+    justify-content: center;
+    min-width: 150px;
+    display: block;
+  }
+  .p-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .p-inputtext.ng-invalid.ng-touched {
+    border-color: #d83131;
+  }
+  .ng-invalid.ng-touched {
+    > .p-dropdown {
+      border-color: #d83131;
+      .p-dropdown-label {
+        border-color: #d83131;
+      }
+    }
+  }
+
+  .p-image-mask {
+    z-index: 9999999999 !important;
+  }
+  .p-button-outlined {
+    border-width: 2px;
+  }
+  body {
+    --f-sb-fallback-font-size: 18px;
+    font-size: 18px;
+  }
+  .p-password,
+  .p-dropdown,
+  .p-inputtext,
+  .p-inputtextarea,
+  .p-calendar,
+  .p-checkbox,
+  .p-radiobutton,
+  .p-slider,
+  .p-spinner,
+  .p-rating,
+  .p-colorpicker,
+  .p-multiselect,
+  .p-chips,
+  .p-listbox,
+  .p-autocomplete,
+  .p-cascadeselect,
+  .p-orderlist,
+  .p-picklist,
+  .p-galleria,
+  .p-dataview,
+  .p-tabview,
+  .p-fieldset,
+  .p-card {
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .p-avatar {
+    display: flex;
+  }
+
+  .p-overlaypanel {
+    .p-menu {
+      border: none;
+    }
+  }
+  .p-overlaypanel .p-overlaypanel-content {
+    padding: 0;
+  }
+  .p-dropdown {
+    display: flex;
+  }
+}
+
+p-confirmdialog .p-dialog-mask {
+  z-index: 99999999999 !important;
+}
+p-confirmdialog .p-dialog {
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.no-mg {
+  margin: 0;
+}
+
+.required {
+  color: #ff0000;
+}
+
+.crop-mask {
+  z-index: 999999999999 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8feb9b, #66d3fa);
+  border-radius: 12px;
+}
+
+.gradient-3 {
+  background: linear-gradient(135deg, #8feb9b, #66d3fa);
+}
+.gradiend-danger {
+  background: linear-gradient(135deg, #ffaa82, #ff4757);
+}
+.gradiend-warning {
+  background: linear-gradient(135deg, #ffcc00, #ffa502);
+}
+.gradiend-success {
+  background: linear-gradient(135deg, #8feb9b, #66d3fa);
+}
+.gradient-info {
+  background: linear-gradient(135deg, #66d3fa, #1e90ff);
+}
+
+@layer reset {
+  .p-button:not(.p-button-text) {
+    &:not(.p-button-secondary) {
+      background: linear-gradient(135deg, #8feb9b, #66d3fa);
+      font-weight: 500;
+    }
+    &.p-button-secondary {
+      background: linear-gradient(135deg, #cbd5e1, #94a9c7);
+      font-weight: 500;
+    }
+    &.p-button-danger {
+      background: linear-gradient(135deg, #ffaa82, #ff4757);
+      font-weight: 500;
+    }
+    &.p-button-warning {
+      background: linear-gradient(135deg, #ffcc00, #ffa502);
+      font-weight: 500;
+    }
+    &.p-button-success {
+      background: linear-gradient(135deg, #8feb9b, #66d3fa);
+      font-weight: 500;
+    }
+    &.p-button-info {
+      background: linear-gradient(135deg, #66d3fa, #1e90ff);
+      font-weight: 500;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  .p-button {
+    cursor: pointer;
+  }
+}
+
+.full-height {
+  height: calc(100vh - 50px);
+}
+
+[dir="rtl"] {
+  anglelefticon,
+  angledoublelefticon {
+    transform: rotate(180deg);
+  }
+  anglerighticon,
+  angledoublerighticon {
+    transform: rotate(180deg);
+  }
+  chevronrighticon {
+    transform: rotate(180deg);
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 2px solid #8feb9b;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border: 2px solid #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.severity,
+.priority {
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 26px;
+  padding: 2px 12px;
+  &.sm {
+    line-height: 1;
+  }
+  &.LOW {
+    background-image: linear-gradient(45deg, #fdff81, #fffcdd);
+    color: #000;
+  }
+  &.MINOR,
+  &.MEDIUM {
+    background-image: linear-gradient(45deg, #f78a6c, #fdff81);
+    color: #000;
+  }
+
+  &.HIGH,
+  &.CRITICAL {
+    background-image: linear-gradient(45deg, #da0404, #f78a6c);
+    color: #000;
+  }
+  &.WARNING {
+    background: linear-gradient(45deg, #bfd6e4, #fff);
+    color: #000;
+  }
+  &.MAJOR {
+    background-image: linear-gradient(45deg, #ff7119, #ffbc89);
+    color: #000;
+  }
+}
+
+p-dropdownitem {
+  .severity,
+  .priority {
+    width: 100%;
+  }
+}
+
+.type-tag {
+  border-radius: 26px;
+  padding: 2px 6px;
+  color: #000;
+  line-height: 1;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.text-primary-gradient {
+  background: linear-gradient(135deg, #b7ff52, #3ccbff);
+  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p-autocomplete,
+app-event-autocomplete {
+  display: flex;
+  width: 100%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.p-autocomplete-loader {
+  animation: spin 1s linear infinite;
+}
+
+.color-primary {
+  color: #b7ff52;
+}
+
+.priority,
+.severity {
+  font-weight: 600;
+}
+.status {
+  border-radius: 26px;
+  line-height: 1;
+  font-size: 14px;
+  padding: 2px 6px;
+  font-weight: 600;
+  &.NEW {
+    background: linear-gradient(135deg, #b7ff52, #3ccbff);
+    color: #000;
+  }
+  &.IN_PROGRESS {
+    background: linear-gradient(135deg, #ff7119, #ffbc89);
+    color: #000;
+  }
+  &.DONE {
+    background: linear-gradient(135deg, #8feb9b, #66d3fa);
+    color: #000;
+  }
+  &.SUSPENDED {
+    background: linear-gradient(135deg, #9b77ff, #fffea7d0);
+    color: #000;
+  }
+  &.CLOSED {
+    background: linear-gradient(135deg, #1f3439, #1d635f);
+    color: #fff;
+  }
+  &.UNHANDLED {
+    background: linear-gradient(135deg, #ff00b7, #eaff02);
+    color: #000;
+  }
+  &.HANDLED {
+    background: linear-gradient(135deg, #8feb9b, #66d3fa);
+    color: #000;
+  }
+}
+
+.color-danger {
+  color: #ff4757;
+}
+
+.required-label {
+  background: linear-gradient(135deg, #ffaa82, #ff4757);
+  color: #000;
+  padding: 2px 12px;
+  border-radius: 26px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.no-required-label {
+  background: linear-gradient(135deg, #b7ff52, #3ccbff);
+  color: #000;
+  padding: 2px 12px;
+  border-radius: 26px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.fg-1 {
+  flex-grow: 1;
+}
+
+.lazy-overlay-container {
+  max-height: 400px;
+  overflow-y: auto;
+  .cbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    text-align: center;
+  }
+}
+.custom-autocomplete {
+  .pi-search {
+    position: absolute;
+    inset-inline-end: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .item {
+    font-family: inherit;
+    display: block;
+    background: var(--surface-a);
+    width: 100%;
+    border: none;
+    border-block-end: 2px solid var(--surface-d);
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background: var(--surface-b);
+    }
+  }
+  input {
+    padding-inline-end: 70px !important;
+  }
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+.rel {
+  position: relative;
+}
+
+.no-owh {
+  overflow: visible !important;
+}
+.primary-tag {
+  background: linear-gradient(135deg, #b7ff52, #3ccbff);
+  color: #000;
+  padding: 2px 12px;
+  border-radius: 26px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.geo-object-item {
+  background: linear-gradient(135deg, #b7ff52, #3ccbff);
+  color: #000;
+  padding: 2px 12px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &-name {
+    cursor: pointer;
+    min-height: 38px;
+    background: none;
+    align-items: center;
+    border: none;
+    font-size: 14px;
+    display: flex;
+    line-height: 1;
+    height: 100%;
+    flex-grow: 1;
+    color: #000;
+    padding: 0;
+    font-family: inherit;
+  }
+  .btn-delete {
+    position: relative;
+    inset-inline-end: -8px;
+    .p-button {
+      background: none;
+      color: #fff;
+      background-color: #000;
+      border-radius: 50%;
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+.event-children-total,
+.person-children-total {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+}
+
+.tag-id {
+  border-radius: 26px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #b7ff52, #3ccbff);
+  color: #000;
+  font-weight: 600;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  min-width: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.esri-ui .esri-popup .esri-widget__heading {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px !important;
+  line-height: 1;
+}
+
+.esri-view-width-less-than-medium .esri-popup__main-container {
+  width: 340px !important;
+}
+p-dropdown {
+  .severity,
+  .priority {
+    width: 100%;
+  }
+}
+
+.no-ovw {
+  overflow: visible !important;
+}
+
+.app-custom-radiobox {
+  span {
+    border-radius: 42px;
+    padding: 6px 10px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--surface-d);
+    cursor: pointer;
+    gap: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  input {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    border: 0;
+    padding: 0;
+    & + span i {
+      min-width: 20px;
+      width: 20px;
+      min-height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 2px solid var(--surface-d);
+      background: var(--surface-a);
+    }
+    &:checked {
+      & + span {
+        border-color: #b7ff52;
+      }
+      & + span i {
+        background: linear-gradient(135deg, #b7ff52, #3ccbff);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #000;
+        }
+      }
+    }
+  }
+}
+
+html {
+  height: 100%;
+}
+body.create-event-page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.p-password {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  position: relative;
+  direction: ltr;
+  eyeicon,
+  eyeslashicon {
+    position: absolute;
+    right: 0;
+    left: auto;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .p-inputtext {
+    padding-inline: 10px;
+  }
+}
+
+.a-btn {
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: underline;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.p-checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.column-tag {
+  border-radius: 26px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(90deg, #606eb1, #404767);
+  color: #f7fbff;
+}
+.events-tabs-container {
+  display: flex;
+  gap: 5px;
+  padding: 5px 0 10px;
+  button {
+    background: var(--surface-f);
+    border: none;
+    border-radius: 26px;
+    padding: 2px 14px;
+    font-size: 16px;
+    opacity: 0.7;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    &.active {
+      opacity: 1;
+      background: linear-gradient(135deg, #b7ff52, #3ccbff);
+      color: #000;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.mg-0 {
+  margin: 0;
+}
+
+.control-with-reset {
+  position: relative;
+  button.btn-close {
+    position: absolute;
+    inset-inline-end: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pi {
+      background: transparent !important;
+      color: #fff !important;
+    }
+  }
+}
+
+.total-selected-tag {
+  border-radius: 26px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #b7ff52, #3ccbff);
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.p-multiselect-item {
+  .priority,
+  .severity,
+  .status {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    line-height: 1.2;
+  }
+  .p-checkbox {
+    width: auto;
+  }
+}
+
+.p-datepicker-group-container {
+  button.p-link {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
+
+[dir="rtl"] {
+  .p-datepicker-prev-icon {
+    transform: rotate(180deg);
+  }
+}
+.internal-event {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--surface-b);
+  .panel {
+    background: none !important;
+    padding: 0;
+  }
+  app-event-details-view > s-box {
+    padding: 0 !important;
+  }
+}
+
+.color-tag {
+  text-transform: lowercase;
+  border-radius: 26px;
+  padding: 2px 12px;
+  line-height: 1.2;
+  display: flex;
+  font-weight: 700;
+  width: 100%;
+  justify-content: center;
+  &.BROWN {
+    background-color: #a52a2a;
+    color: #fff;
+  } /* Темно-коричневый */
+  &.BLUE {
+    background-color: #4682b4;
+    color: #fff;
+  } /* Стальной синий */
+  &.GREEN {
+    background-color: #6b8e23;
+    color: #fff;
+  } /* Оливково-зеленый */
+  &.GRAY {
+    background-color: #708090;
+    color: #fff;
+  } /* Серый */
+  &.HAZEL {
+    background-color: #8b4513;
+    color: #fff;
+  } /* Лесной орех */
+  &.AMBER {
+    background-color: #ffbf00;
+    color: #000;
+  } /* Янтарный */
+  &.BLACK {
+    background-color: #000000;
+    color: #fff;
+  } /* Черный */
+  &.RED {
+    background-color: #8b0000;
+    color: #fff;
+  } /* Темно-красный */
+  &.VIOLET {
+    background-color: #9400d3;
+    color: #fff;
+  } /* Темно-фиолетовый */
+  &.WHITE {
+    background-color: #f5f5f5;
+    color: #000;
+  } /* Белый */
+  &.YELLOW {
+    background-color: #ffd700;
+    color: #000;
+  } /* Золотой */
+  &.BLONDE {
+    background-color: #f0e68c;
+    color: #000;
+  } /* Светло-желтый */
+  &.BROWNISH {
+    background-color: #8b4513;
+    color: #fff;
+  } /* Коричневатый */
+  &.DARK {
+    background-color: #423b26;
+    color: #fff;
+  } /* Темно-индиго */
+  &.FAIR {
+    background-color: #ffe4c4;
+    color: #000;
+  } /* Бежевый */
+  &.LIGHT {
+    background-color: #fafad2;
+    color: #000;
+  } /* Светло-желтый */
+  &.MEDIUM {
+    background-color: #d2b48c;
+    color: #000;
+  } /* Светло-коричневый */
+  &.OLIVE {
+    background-color: #556b2f;
+    color: #fff;
+  } /* Темно-оливковый */
+  &.PALE {
+    background-color: #e6e6fa;
+    color: #000;
+  } /* Бледно-лиловый */
+  &.TAN {
+    background-color: #d2b48c;
+    color: #000;
+  } /* Бежевый */
+  &.TAWNY {
+    background-color: #cd853f;
+    color: #fff;
+  } /* Рыжевато-коричневый */
+  &.WHEATISH {
+    background-color: #f5deb3;
+    color: #000;
+  } /* Пшеничный */
+  &.YELLOWISH {
+    background-color: #ffffe0;
+    color: #000;
+  } /* Светло-желтый */
+  &.GRAYISH {
+    background-color: #bebebe;
+    color: #000;
+  } /* Серый */
+  &.PINKISH {
+    background-color: #ffb6c1;
+    color: #000;
+  } /* Светло-розовый */
+  &.REDDISH {
+    background-color: #b22222;
+    color: #fff;
+  } /* Огненно-красный */
+  &.PURPLISH {
+    background-color: #9370db;
+    color: #fff;
+  } /* Средний фиолетовый */
+  &.ORANGE {
+    background-color: #ffa07a;
+    color: #000;
+  } /* Светло-оранжевый */
+}
+
+app-persons-filter-render {
+  width: 100%;
+  display: block;
+}
+
+.p-multiselect-header {
+  .p-checkbox {
+    width: auto;
+  }
+  .p-multiselect-filter-container {
+    flex-grow: 1;
+  }
+}
+
+.p-multiselect {
+  .p-multiselect-clear-icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: #fff;
+    border-radius: 50%;
+    background-color: rgb(166, 49, 49);
+    path {
+      fill: #fff;
+      transform-origin: center;
+      transform: scale(0.6);
+    }
+  }
+}
+
+p-calendar {
+  display: block;
+  width: 100%;
+}
+
+.risk-level-tag,
+.risk-tag,
+.riskLevel {
+  border-radius: 26px;
+  padding: 2px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+  font-weight: 700;
+  &.HIGH {
+    background: linear-gradient(135deg, #da0404, #f78a6c);
+    color: #000;
+  }
+  &.LOW {
+    background: linear-gradient(135deg, #b8ff81, #ffffff);
+    color: #000;
+  }
+  &.MEDIUM {
+    background: linear-gradient(135deg, #f78a6c, #fdff81);
+    color: #000;
+  }
+}
+.risk-tag {
+  font-size: 20px;
+  padding: 2px 18px;
+}
+app-map-address-autocomplete {
+  display: block;
+  width: 100%;
+}
+
+.address-item {
+  font-size: 14px;
+}
+
+.btn-min-width {
+  .p-button {
+    min-width: 200px;
+    justify-content: center;
+  }
+}
+
+.p-dialog-header-close {
+  color: #000;
+  display: flex;
+  align-items: center;
+  timesicon {
+    display: flex;
+    align-items: center;
+  }
+}
+
+app-events-simple-table .event-table {
+  height: auto !important;
+}
+
 @font-face {
   font-family: 'Rubik';
   src: url('assets/fonts/Rubik/static/Rubik-Regular.ttf') format('truetype');

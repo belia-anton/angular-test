@@ -1,39 +1,40 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-counter-card',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   standalone: true,
   imports: [],
   template: `
-    <div class="counter-container">
-      <div>
-        <img src="../../assets/coin.png" width="20px" alt="shekels" />
+    <flex-box center column class="counter-container">
+      <flex-box center>
+        <img src="../../assets/shekels.png" width="20px" alt="shekels" />
         <span class="counter-value">{{ value }}</span>
-      </div>
-      <span class="counter-label">{{ label }}</span>
-    </div>
+      </flex-box>
+      <p class="counter-label">{{ label }}</p>
+    </flex-box>
   `,
   styles: [
     `
       .counter {
+        font-family: Rubik, Regular;
+
         &-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
           padding: 30px 10px 10px 10px;
           border-radius: 20px;
           background-color: white;
-          max-width: 120px;
+          max-width: 140px;
         }
 
         &-value {
           padding-inline-start: 5px;
-          font-size: 28px;
+          font-size: 26.6px;
           font-weight: 900;
         }
 
         &-label {
-          font-size: 20px;
+          margin: 0;
+          font-size: 16px;
         }
       }
     `,
