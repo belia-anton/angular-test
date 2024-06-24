@@ -17,9 +17,29 @@
     <app-button buttonStyle="yellow-button">לדף ההזמנה</app-button>
     <s-box h="50px"></s-box>
     <flex-box center gap="20px">
-      <app-avatar [imageUrl]="currentImageUrl" [disabled]="isAvatarDisabled" (photoUploaded)="onPhotoUploaded($event)"></app-avatar>
-      <app-avatar [imageUrl]="currentImageUrl" [disabled]=true (photoUploaded)="onPhotoUploaded($event)"></app-avatar>
+      <app-avatar
+        [imageUrl]="currentImageUrl"
+        [disabled]="isAvatarDisabled"
+        (photoUploaded)="onPhotoUploaded($event)"
+      ></app-avatar>
+      <app-avatar
+        [imageUrl]="currentImageUrl"
+        [disabled]="true"
+        (photoUploaded)="onPhotoUploaded($event)"
+      ></app-avatar>
     </flex-box>
+    <s-box h="50px"></s-box>
+    <app-notification-card
+      time="19:30"
+      title="הזמנה 6855241 שוגרה לצוותי הניקיון"
+      message="אנחנו מפיצים כעת את הקריאה שלך לצוותי הניקיון שבאזור, ברגע שצוות ניקיון יאשר את ההזמנה, אנחנו נשלח לך עדכון"
+    ></app-notification-card>
+    <s-box h="10px"></s-box>
+    <app-large-notification-card
+      title="הזמנה 6855241 שוגרה לצוותי הניקיון"
+      message="אנחנו מפיצים כעת את הקריאה שלך לצוותי הניקיון שבאזור, ברגע שצוות ניקיון יאשר את ההזמנה, אנחנו נשלח לך עדכון"
+      time="19:30 15/01/2024"
+    ></app-large-notification-card>
   </div>
 </main>
 

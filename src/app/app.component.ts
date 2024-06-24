@@ -6,6 +6,8 @@ import { CardComponent } from './card/card.component';
 import { SliderModule } from './slider/slider.module';
 import { ButtonModule } from './button/button.module';
 import { AvatarModule } from './avatar/avatar.module';
+import { NotificationCardComponent } from './notification-card/notification-card.component';
+import { LargeNotificationCardComponent } from './large-notification-card/large-notification-card.component';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +19,16 @@ import { AvatarModule } from './avatar/avatar.module';
     SliderModule,
     ButtonModule,
     AvatarModule,
+    NotificationCardComponent,
+    LargeNotificationCardComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
+  title = 'angular-test';
+
   clearingSlides = [
     {
       image: './assets/slider1.png',
@@ -41,8 +47,6 @@ export class AppComponent {
   ];
   currentImageUrl: string | null = 'assets/avatar.png';
   isAvatarDisabled: boolean = false;
-
-  title = 'angular-test';
 
   constructor() {}
 
