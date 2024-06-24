@@ -15,9 +15,13 @@
   font-family: 'Rubik', sans-serif;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color, transform 0.3s ease, color 0.3s ease;
   position: relative;
   overflow: hidden;
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   &.white-button {
     background-color: #fff;
