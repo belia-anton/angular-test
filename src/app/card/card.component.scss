@@ -72,18 +72,26 @@
     &-body {
       padding-top: 10px;
       z-index: 3;
-      
+
       .location {
         padding: 10px 0;
         color: #040824;
+        position: relative;
 
+        img {
+          position: relative;
+          top: 7px;
+        }
 
         .label {
           font-weight: 900;
+          padding-inline-start: 5px;
+          padding-inline-end: 5px;
         }
 
         .value {
           font-size: 14px;
+          padding-inline-start: 5px;
         }
 
         &:hover {
