@@ -15,6 +15,11 @@
     <s-box h="50px"></s-box>
     <app-button buttonStyle="white-button">סמן כלא נקרא</app-button>
     <app-button buttonStyle="yellow-button">לדף ההזמנה</app-button>
+    <s-box h="50px"></s-box>
+    <flex-box center gap="20px">
+      <app-avatar [imageUrl]="currentImageUrl" [disabled]="isAvatarDisabled" (photoUploaded)="onPhotoUploaded($event)"></app-avatar>
+      <app-avatar [imageUrl]="currentImageUrl" [disabled]=true (photoUploaded)="onPhotoUploaded($event)"></app-avatar>
+    </flex-box>
   </div>
 </main>
 

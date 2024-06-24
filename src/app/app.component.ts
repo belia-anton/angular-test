@@ -5,6 +5,7 @@ import { CounterCardComponent } from './counter-card/counter-card.component';
 import { CardComponent } from './card/card.component';
 import { SliderModule } from './slider/slider.module';
 import { ButtonModule } from './button/button.module';
+import { AvatarModule } from './avatar/avatar.module';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { ButtonModule } from './button/button.module';
     CardComponent,
     SliderModule,
     ButtonModule,
+    AvatarModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -37,6 +39,15 @@ export class AppComponent {
         'לא משנה מה גודל הנכס/מקום/מתחם, אנחנו יכולים להגיע ולתת שירות נקיון מקצועי, בכל מקום וכל זמן',
     },
   ];
+  currentImageUrl: string | null = 'assets/avatar.png';
+  isAvatarDisabled: boolean = false;
 
   title = 'angular-test';
+
+  constructor() {}
+
+  onPhotoUploaded(newImageUrl: string) {
+    this.currentImageUrl = newImageUrl;
+    console.log('New image uploaded:', newImageUrl);
+  }
 }

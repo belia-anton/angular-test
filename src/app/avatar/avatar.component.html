@@ -1,0 +1,20 @@
+<div class="avatar-container" [class.disabled]="disabled">
+  <div class="avatar">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Avatar" class="avatar-image" />
+    <div *ngIf="!imageUrl" class="avatar-placeholder"></div>
+    <button
+      *ngIf="!disabled"
+      class="upload-button"
+      (click)="onUploadClick($event)"
+    >
+      <img src="../../assets/IconCamera.png" alt="Upload Icon" />
+    </button>
+    <input
+      type="file"
+      #fileInput
+      class="file-input"
+      (change)="onFileSelected($event)"
+      hidden
+    />
+  </div>
+</div>
